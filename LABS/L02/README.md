@@ -28,4 +28,5 @@ As i seen the results are not perfect but with the introduction of some more par
 
 ## Peer reviews
 https://github.com/marcocirone/ComputationalIntelligence/issues/1
+
 https://github.com/SalvoCab99/Computational-Intelligence/issues/2
