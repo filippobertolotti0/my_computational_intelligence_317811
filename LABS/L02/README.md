@@ -3,12 +3,12 @@ Implementation of an evolutionary algorithm capable to play the Nim game.
 ## Individuals, Parameters and Population
 The class "individual" will play the part of genome in my evolutionary algorithm.
 
-An individual consists in a counter "wins" taking notes of number of matches won by the individual and a set of parameters:
+An individual consists in a counter "wins" taking notes of number of matches won by the individual and the following set of parameters:
 - odd: number of rows with odd number of elements.
-- firstlast: probability to pick elements from the first.
+- first_last: probability to pick elements from the first row.
 - k: probability to pick all the row's elements.
 
-The starting population is composed by 100 individuals having randomly parameters (each from 0 to 1) and counter initialized to 0.
+The starting population is composed by 100 individuals having random parameters (each from 0 to 1) and counter initialized to 0.
 
 ## Strategy adopted
 The evolutionary strategy is based on a tournament between the 100 individuals. Every individual play against each other two times (198 matches each). The winner's counter is increased everytime a match end up.
@@ -25,3 +25,7 @@ The evolutionary strategy in few minutes returns a player with an average win pe
 - 40% against the optimal player.
 
 As i seen the results are not perfect but with the introduction of some more parameters i think that the strategy could reach at least an average of 75% and 48% respectively against random and optimal players.
+
+## Peer reviews
+https://github.com/marcocirone/ComputationalIntelligence/issues/1
+https://github.com/SalvoCab99/Computational-Intelligence/issues/2
