@@ -34,3 +34,5 @@ In general the best fitnesses obtained may vary based on the initial population 
 ## Peer reviews
 
 https://github.com/leonardo-pieraccioli/computational-intelligence/issues/1
+
+https://github.com/HerryTheBest/Polito---Computational-Intelligence/issues/5
