@@ -32,3 +32,5 @@ In my opinion i get a good result that could be improved with some more trials.
 In general the best fitnesses obtained may vary based on the initial population and the random variable of the algorithm.
 
 ## Peer reviews
+
+https://github.com/leonardo-pieraccioli/computational-intelligence/issues/1
