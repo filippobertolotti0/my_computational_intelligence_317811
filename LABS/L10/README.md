@@ -32,4 +32,5 @@ After the training the RL_player has an average win ratio of 80% while the rando
 ## Peer Reviews
 
 https://github.com/gregorio-nic/computational-intelligence/issues/5
+
 https://github.com/ludofiorio/labs_comp_inte/issues/9
