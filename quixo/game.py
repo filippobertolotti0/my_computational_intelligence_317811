@@ -209,3 +209,54 @@ class Game(object):
                 # move the piece down
                 self._board[(self._board.shape[0] - 1, from_pos[1])] = piece
         return acceptable
+    
+class Board(Game):
+    def __init__(self, board: np.ndarray) -> None:
+        self._board = board
+
+    def check_move(self, from_pos: tuple[int, int], slide: Move, player_id: int) -> bool:
+        SIDES = [(0, 0), (0, 4), (4, 0), (4, 4)]
+
+        if self._board[from_pos] < 0 or self._board[from_pos] == player_id:
+            if from_pos in SIDES:
+                return (from_pos == (0, 0) and (slide == Move.BOTTOM or slide == Move.RIGHT) or
+                        from_pos == (4, 0) and (slide == Move.TOP or slide == Move.RIGHT) or
+                        from_pos == (0, 4) and (slide == Move.BOTTOM or slide == Move.LEFT) or
+                        from_pos == (4, 4) and (slide == Move.TOP or slide == Move.LEFT))
+            else:
+                return ((from_pos[0] == 0 and (slide == Move.BOTTOM or slide == Move.LEFT or slide == Move.RIGHT)) or
+                        (from_pos[0] == 4 and (slide == Move.TOP or slide == Move.LEFT or slide == Move.RIGHT)) or
+                        (from_pos[1] == 0 and (slide == Move.BOTTOM or slide == Move.TOP or slide == Move.RIGHT)) or
+                        (from_pos[1] == 4 and (slide == Move.BOTTOM or slide == Move.TOP or slide == Move.LEFT)))
+
+        return False
+        
+    def move(self, from_pos: tuple[int, int], slide: Move, player_id: int):
+        '''Perform a move'''
+        self._board[from_pos] = player_id
+        self.__slide((from_pos[1], from_pos[0]), slide)
+
+
+    def __slide(self, from_pos: tuple[int, int], slide: Move):
+        '''Slide the other pieces'''
+        piece = self._board[from_pos]
+        if slide == Move.LEFT:
+            for i in range(from_pos[1], 0, -1):
+                self._board[(from_pos[0], i)] = self._board[(
+                    from_pos[0], i - 1)]
+            self._board[(from_pos[0], 0)] = piece
+        elif slide == Move.RIGHT:
+            for i in range(from_pos[1], self._board.shape[1] - 1, 1):
+                self._board[(from_pos[0], i)] = self._board[(
+                    from_pos[0], i + 1)]
+            self._board[(from_pos[0], self._board.shape[1] - 1)] = piece
+        elif slide == Move.TOP:
+            for i in range(from_pos[0], 0, -1):
+                self._board[(i, from_pos[1])] = self._board[(
+                    i - 1, from_pos[1])]
+            self._board[(0, from_pos[1])] = piece
+        elif slide == Move.BOTTOM:
+            for i in range(from_pos[0], self._board.shape[0] - 1, 1):
+                self._board[(i, from_pos[1])] = self._board[(
+                    i + 1, from_pos[1])]
+            self._board[(self._board.shape[0] - 1, from_pos[1])] = piece
