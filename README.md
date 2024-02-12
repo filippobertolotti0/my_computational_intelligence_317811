@@ -7,4 +7,6 @@ Lab 2: Nim game with evolutionary algorithm.
 
 Lab 9: Solution for a blackbox problem.
 
-The peer reviews' links are at the end of the README files. 
+Lab 10: Play Tic-Tac-Toe with Reinforcement Learning
+
+N.B. The peer reviews' links are at the end of the respective lab README file. 

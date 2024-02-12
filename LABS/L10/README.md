@@ -28,3 +28,9 @@ After every winning move, both side, the algorithm will performs an update on th
 ## Conclusions
 
 After the training the RL_player has an average win ratio of 80% while the random_player has an average win ratio less than 10%.
+
+## Peer Reviews
+
+https://github.com/gregorio-nic/computational-intelligence/issues/5
+
+https://github.com/ludofiorio/labs_comp_inte/issues/9
