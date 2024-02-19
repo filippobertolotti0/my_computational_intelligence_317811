@@ -9,4 +9,6 @@ Lab 9: Solution for a blackbox problem.
 
 Lab 10: Play Tic-Tac-Toe with Reinforcement Learning
 
+Quixo: Final project
+
 N.B. The peer reviews' links are at the end of the respective lab README file. 
